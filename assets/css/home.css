@@ -1,0 +1,77 @@
+:root {
+    --main-bg-color: #AD2365;
+
+}
+
+/* background-color: var(--main-bg-color);  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color:#fac0dc;
+    ;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    margin-top: 100px;
+    height: 80vh;
+    width: 80%;
+}
+
+.api-clima {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.card {
+    max-width: 22rem;
+    background-color: #AD2365;
+    opacity: 0.8;
+    border-radius: 25px;
+    width: calc(100% - 100px);
+    padding: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    width: calc(100% - 100px);
+}
+
+
+.api-clima {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+}
+
+@media(max-width: 991px) {
+    .api-clima {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
