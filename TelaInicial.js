@@ -1,7 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const TelaInicial = () => {
+    const navigation = useNavigation();
+
+    const handleCadastroEmpresa = () => {
+        navigation.navigate('CadastroEmpresa');
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.contFolhas}>
@@ -15,10 +22,10 @@ const TelaInicial = () => {
                 <View style={styles.inputs}>
                     <TextInput placeholder="CNPJ" style={styles.textInput} />
                     <TextInput placeholder="SENHA" secureTextEntry={true} style={styles.textInput} />
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('WeatherCard')}>
                         <Text style={styles.buttonText}>Login</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.junteSeButton}>
+                    <TouchableOpacity style={styles.junteSeButton} onPress={handleCadastroEmpresa}>
                         <Text style={styles.junteSeText}>Ainda não é membro? <Text style={styles.junteSeSpan}>Junte-se agora!</Text></Text>
                     </TouchableOpacity>
                 </View>

@@ -30,6 +30,10 @@ const HomeScreen = () => {
   const goToControllerEstoque = () => {
     navigation.navigate('ControllerEstoque');
   };
+  const goToWeatherCard = () => {
+    navigation.navigate('WeatherCard');
+  };
+
 
 
   return (
@@ -47,6 +51,9 @@ const HomeScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Ir para Cadastro de Funcionário" onPress={goToCadastroFuncionario} color="#8B0000" />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button title="WeatherCard" onPress={goToWeatherCard} color="#8B0000" />
       </View>
 
       <View style={styles.divider}></View>

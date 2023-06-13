@@ -17,6 +17,9 @@ import ControllerEmpresas from './ControllerEmpresas';
 
 //Crud Estoque
 import ControllerEstoque from './ControllerEstoque';
+import WeatherCard from './WeatherCard';
+
+//Telas a partir do login
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -31,6 +34,8 @@ const App = () => {
         <Stack.Screen name="ControllerFuncionarios" component={ControllerFuncionarios} />
         <Stack.Screen name="ControllerEmpresas" component={ControllerEmpresas} />
         <Stack.Screen name="ControllerEstoque" component={ControllerEstoque} />
+        <Stack.Screen name="WeatherCard" component={WeatherCard} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
