@@ -28,7 +28,7 @@ const WeatherCard = () => {
 
                 setWeatherData(weatherResponse.data);
 
-                const vinicolasResponse = await axios.get(`http://172.26.38.209:8080/vinicolas/cep/${cepValue}`);
+                const vinicolasResponse = await axios.get(`http://192.168.0.107:8080/vinicolas/cep/${cepValue}`);
                 if (vinicolasResponse.data.nome_gerente) {
                     setVinicolas([vinicolasResponse.data]);
                 } else {
@@ -39,6 +39,23 @@ const WeatherCard = () => {
             }
         }
     };
+
+    useEffect(() => {
+        const fetchVinicolasData = async () => {
+            try {
+                const vinicolasResponse = await axios.get('http://192.168.0.107:8080/vinicolas');
+                if (vinicolasResponse.data) {
+                    setVinicolas(vinicolasResponse.data);
+                } else {
+                    setVinicolas([]);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchVinicolasData();
+    }, []);
 
     const handleSearch = () => {
         setWeatherData(null);
@@ -101,11 +118,13 @@ const WeatherCard = () => {
                 {vinicolas.length > 0 ? (
                     <FlatList
                         data={vinicolas}
-                        keyExtractor={(item) => item.id.toString()}
+                        keyExtractor={(item) => String(item.id)}
                         renderItem={({ item }) => (
                             <View style={styles.vinicolaCard}>
-                                <Text style={styles.vinicolaName}>{item.nome}</Text>
-                                <Text style={styles.vinicolaAddress}>{item.endereco}</Text>
+                                <Text style={styles.vinicolaName}>Nome da Vinícola: {item.nome_vinicola}</Text>
+                                <Text style={styles.vinicolaName}>Nome do Gerente: {item.nome_gerente}</Text>
+                                <Text style={styles.vinicolaName}>Tipo de Uva: {item.tipo_uva}</Text>
+                                <Text style={styles.vinicolaName}>Última Colheita: {item.ultima_colheita}</Text>
                             </View>
                         )}
                     />
@@ -117,6 +136,7 @@ const WeatherCard = () => {
             <TouchableOpacity style={styles.gerenciarButton} onPress={handleGerenciar}>
                 <Text style={styles.gerenciarButtonText}>Gerenciar</Text>
             </TouchableOpacity>
+
         </View>
     );
 };

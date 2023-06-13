@@ -22,10 +22,18 @@ const Gerenciar = () => {
     const goToGerenciarEmpresas = () => {
         navigation.navigate('GerenciarEmpresas');
     };
+    const goToGerenciarCampoVinicola = () => {
+        navigation.navigate('GerenciarCampoVinicola');
+    };
 
 
     return (
+
         <View style={styles.container}>
+            <View style={styles.buttonContainer}>
+                <Button title="Meus Campos" onPress={goToGerenciarCampoVinicola} color="#8B0000" />
+            </View>
+
             <View style={styles.buttonContainer}>
                 <Button title="Administrar Funcionarios" onPress={goToGerenciarFuncionario} color="#8B0000" />
             </View>

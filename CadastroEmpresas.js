@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, Dimensions, Alert } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, Dimensions, Alert, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 
@@ -35,88 +35,7 @@ const CadastroEmpresa = () => {
       });
   };
 
-  const styles = {
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    contFolhas: {
-      flexDirection: 'row',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-    },
-    folhas: {
-      width: 100,
-      height: 100,
-    },
-    folhasOpacidade: {
-      opacity: 0.5,
-    },
-    folhasRotate: {
-      transform: [{ rotate: '180deg' }],
-    },
-    card2: {
-      backgroundColor: '#ffffff',
-      width: windowWidth * 0.8, // Utiliza 80% da largura da tela
-      borderRadius: 8,
-      padding: 16,
-      shadowColor: '#000000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.3,
-      shadowRadius: 2,
-      elevation: 2,
-      alignItems: 'center',
-    },
-    imgLogo: {
-      marginBottom: 20,
-    },
-    logo: {
-      width: 150,
-      height: 150,
-    },
-    inputs: {
-      width: '100%',
-      marginTop: 20,
-    },
-    inputContainer: {
-      padding: 10,
-      marginBottom: 10,
-    },
-    textInput: {
-      height: 50,
-      borderColor: 'gray',
-      borderWidth: 1,
-      marginBottom: 10,
-      paddingHorizontal: 10,
-      width: '100%', // Ocupa 100% da largura do inputContainer
-    },
-    forgotPassword: {
-      marginBottom: 10,
-    },
-    button: {
-      backgroundColor: '#31506F',
-      borderRadius: 8,
-      padding: 12,
-      alignItems: 'center',
-      marginBottom: 10,
-    },
-    buttonText: {
-      color: '#ffffff',
-      fontSize: 16,
-    },
-    junteSe: {
-      marginBottom: 20,
-    },
-    junteSeText: {
-      textAlign: 'center',
-      fontSize: 14,
-    },
-    junteSeSpan: {
-      fontWeight: 'bold',
-    },
-  };
+ 
 
   return (
     <View style={styles.container}>
@@ -124,7 +43,7 @@ const CadastroEmpresa = () => {
         <Image source={require('./assets/folhas.png')} style={styles.folhas} />
         <Image source={require('./assets/folhas.png')} style={[styles.folhas, styles.folhasOpacidade]} />
       </View>
-      <View style={styles.card2}>
+      <View style={styles.card}>
         <View style={styles.imgLogo}>
           <Image source={require('./assets/LogoWineYardsAPP.png')} style={styles.logo} />
         </View>
@@ -157,7 +76,6 @@ const CadastroEmpresa = () => {
               onChangeText={(text) => setSenha(text)}
             />
 
-            <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
 
             <TouchableOpacity style={styles.button} onPress={cadastrarEmpresa}>
               <Text style={styles.buttonText}>Cadastrar</Text>
@@ -179,5 +97,93 @@ const CadastroEmpresa = () => {
     </View>
   );
 };
+ const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    contFolhas: {
+        flex:0.5,
+    },
+    inputContainer:{
+      display:'flex',
+      backgroundColor:'white',
+      flexDirection:'column'
+    },
+    folhas: {
+        width: 350,
+        height: 150,
+        right:150,
+    },
+    folhasOpacidade: {
+        opacity: 0.5,
+    },
+    folhasRotate: {
+        transform: [{ rotate: '180deg' }],
+        left:150,
+    },
+    card: {
+        backgroundColor: '#FFF',
+        width: 300,
+        borderRadius: 8,
+        padding: 16,
+        shadowColor: '#000000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.3,
+        shadowRadius: 2,
+        elevation: 2,
+        alignItems: 'center',
+        gap:10,
+    },
+    imgLogo: {
+        marginBottom: 20,
+    },
+    logo: {
+        width: 150,
+        height: 150,
+    },
+    inputs: {
+        width: '100%',
+    },
+    textInput: {
+        borderWidth: 1,
+        borderColor: '#000000',
+        borderRadius: 8,
+        padding: 10,
+        marginBottom: 10,
+        borderColor:'#188E04',
+    },
+    button: {
+        backgroundColor: '#AD2365',
+        borderRadius: 8,
+        padding: 12,
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    buttonText: {
+        color: '#ffffff',
+        fontSize: 16,
+    },
+    junteSeButton: {
+        marginBottom: 20,
+    },
+    junteSeText: {
+        textAlign: 'center',
+        fontSize: 14,
+        marginBottom:10,
+    },
+    junteSeSpan: {
+        fontWeight: 'bold',
+        color:'#188E04'
+
+    },
+    junteSe:{
+      display:'flex',
+      flexDirection:'row',
+      justifyContent:'center',
+      gap:5
+    }
+})
 
 export default CadastroEmpresa;

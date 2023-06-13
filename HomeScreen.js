@@ -36,16 +36,36 @@ const HomeScreen = () => {
   const goToGerenciar = () => {
     navigation.navigate('Gerenciar')
   }
+  const goToCadastroVinicolaCampo = () => {
+    navigation.navigate('CadastroVinicolaCampo')
+  }
+  const goToGerenciarCampoVinicola = () => {
+    navigation.navigate('GerenciarCampoVinicola')
+  }
+
+
+
 
 
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tela de Botões</Text>
+      <Text style={styles.title}>Fluxo de Telas</Text>
 
+      <Text style={styles.title}>Tela Padrão</Text>
       <View style={styles.buttonContainer}>
         <Button title="Ir para Tela Inicial" onPress={goToTelaInicial} color="#8B0000" />
       </View>
+      <Text style={styles.title}>Tela Mestre</Text>
+      <View style={styles.buttonContainer}>
+        <Button title="Gerenciar" onPress={goToGerenciar} color="#8B0000" />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button title="GerenciarCampoVinicola" onPress={goToGerenciarCampoVinicola} color="#800020" />
+      </View>
+
+
+      <Text style={styles.title}>Tela P/ Cadastro</Text>
       <View style={styles.buttonContainer}>
         <Button title="Ir para Cadastro de Empresa" onPress={goToCadastroEmpresa} color="#8B0000" />
       </View>
@@ -56,15 +76,16 @@ const HomeScreen = () => {
         <Button title="Ir para Cadastro de Funcionário" onPress={goToCadastroFuncionario} color="#8B0000" />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title="Gerenciar" onPress={goToGerenciar} color="#8B0000" />
+        <Button title="CadastroVinicolaCampo" onPress={goToCadastroVinicolaCampo} color="#8B0000" />
       </View>
 
+      <Text style={styles.title}>Tela HOME -API PRINCIPAL </Text>
       <View style={styles.buttonContainer}>
         <Button title="WeatherCard" onPress={goToWeatherCard} color="#8B0000" />
       </View>
 
+      <Text style={styles.title}>Tela GET-UPDATE-DELETE</Text>
       <View style={styles.divider}></View>
-
       <View style={styles.buttonContainer}>
         <Button title="Controller de Empresa" onPress={goToControllerEmpresas} color="#800020" />
       </View>
@@ -74,6 +95,7 @@ const HomeScreen = () => {
       <View style={styles.buttonContainer}>
         <Button title="Controller de Funcionário" onPress={goToControllerFuncionario} color="#800020" />
       </View>
+
     </View>
   );
 };

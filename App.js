@@ -24,7 +24,9 @@ import Gerenciar from './Gerenciar';
 import GerenciarFuncionarios from './GerenciarFuncionarios';
 import GerenciarEstoques from './GerenciarEstoques';
 import GerenciarEmpresas from './GerenciarEmpresas';
-
+import CadastroVinicolaCampo from './CadastroVinicolaCampo';
+import GerenciarCampoVinicola from './GerenciarCampoVinicola';
+import ControllerCampoVinicola from './ControllerCampoVinicola';
 
 //Telas a partir do login
 const Stack = createStackNavigator();
@@ -46,6 +48,11 @@ const App = () => {
         <Stack.Screen name="GerenciarFuncionarios" component={GerenciarFuncionarios} />
         <Stack.Screen name="GerenciarEstoques" component={GerenciarEstoques} />
         <Stack.Screen name="GerenciarEmpresas" component={GerenciarEmpresas} />
+        <Stack.Screen name="CadastroVinicolaCampo" component={CadastroVinicolaCampo} />
+        <Stack.Screen name="GerenciarCampoVinicola" component={GerenciarCampoVinicola} />
+        <Stack.Screen name="ControllerCampoVinicola" component={ControllerCampoVinicola} />
+
+
 
 
 

@@ -37,7 +37,6 @@ const TelaInicial = () => {
         </View>
     );
 };
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -45,20 +44,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     contFolhas: {
-        flexDirection: 'row',
-        position: 'absolute',
-        top: 0,
-        left: 0,
+        flex:0.5,
     },
     folhas: {
-        width: 100,
-        height: 100,
+        width: 350,
+        height: 150,
+        right:150,
     },
     folhasOpacidade: {
         opacity: 0.5,
     },
     folhasRotate: {
         transform: [{ rotate: '180deg' }],
+        left:150,
     },
     card: {
         backgroundColor: '#ffffff',
@@ -88,9 +86,11 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 10,
         marginBottom: 10,
+        borderColor:'#188E04',
+
     },
     button: {
-        backgroundColor: '#31506F',
+        backgroundColor: '#AD2365',
         borderRadius: 8,
         padding: 12,
         alignItems: 'center',
@@ -109,7 +109,10 @@ const styles = StyleSheet.create({
     },
     junteSeSpan: {
         fontWeight: 'bold',
+        color:'#188E04'
+
     },
 });
+
 
 export default TelaInicial;
